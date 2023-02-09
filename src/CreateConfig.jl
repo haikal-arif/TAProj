@@ -1,0 +1,39 @@
+using PWDFT
+include("SimpleCrystalBuilder.jl")
+
+const PSP_DIR = "C:\\Users\\mhaikala\\Documents\\Kuliah\\PWDFT.jl\\pseudopotentials\\"
+
+
+
+function create_LC20()
+    data::Vector{SimpleCrystalConfig} = [
+        SimpleCrystalConfig(["Li"], bcc, 3.477),
+        SimpleCrystalConfig(["Na"], bcc, 4.208),
+        SimpleCrystalConfig(["Al"], fcc, 4.054),
+        SimpleCrystalConfig(["Rh"], fcc, 3.835),
+        SimpleCrystalConfig(["Pd"], fcc, 3.948),
+        SimpleCrystalConfig(["Cu"], fcc, 3.643),
+        SimpleCrystalConfig(["Ag"], fcc, 4.154),
+        SimpleCrystalConfig(["C "], diamond, 3.573),
+        SimpleCrystalConfig(["Si"], diamond, 5.469),
+        SimpleCrystalConfig(["Ge"], diamond, 5.761),
+        SimpleCrystalConfig(["Sn"], diamond, 6.656),
+        SimpleCrystalConfig(["Li", "H "], rocksalt, 4.090),
+        SimpleCrystalConfig(["Li", "F "], rocksalt, 4.102),
+        SimpleCrystalConfig(["Li", "Cl"], rocksalt, 5.184),
+        SimpleCrystalConfig(["Na", "F "], rocksalt, 4.733),
+        SimpleCrystalConfig(["Na", "Cl"], rocksalt, 5.724),
+        SimpleCrystalConfig(["Mg", "O "], rocksalt, 4.207),
+        SimpleCrystalConfig(["Si", "C "], zinc_blende, 5.648),
+        SimpleCrystalConfig(["Ga", "As"], zinc_blende, 5.648),
+    ]
+
+    for atom_config in data
+        atomic_structure::Atoms = build(atom_config)
+        println(atomic_structure)
+    end
+
+end
+
+
+create_LC20()
