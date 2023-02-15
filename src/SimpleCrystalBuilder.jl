@@ -1,3 +1,5 @@
+using PWDFT
+
 "Basic crystal structure for building crystal systems"
 @enum CrystalStructure begin
     fcc
@@ -7,17 +9,17 @@
     zinc_blende
 end
 
-const AtomsList = Vector{String}
-const PspFilesPath = Vector{String}
-const VecAtomsConfig = Tuple{AtomsList, CrystalStructure, PspFilesPath, Float64}
+AtomsList = Vector{String}
+PspFilesPath = Vector{String}
+VecAtomsConfig = Tuple{AtomsList, CrystalStructure, PspFilesPath, Float64}
 
-struct SimpleCrystalConfig
+mutable struct SimpleCrystalConfig
     atom_names::AtomsList
     structure::CrystalStructure
     lattice_param::Float64
 end
 
-const lattice_map = Dict{CrystalStructure, Tuple{Function, Int}}(
+lattice_map = Dict{CrystalStructure, Tuple{Function, Int}}(
         fcc => (gen_lattice_fcc, 1),
         bcc => (gen_lattice_bcc, 1),
         diamond => (gen_lattice_fcc, 2),

@@ -3,8 +3,9 @@ using DelimitedFiles: readdlm
 using PWDFT: Ry2eV, ANG2BOHR
 using LsqFit
 
+
 function main()
-    dat = readdlm("EOS_Al.dat")
+    dat = readdlm("C:\\Users\\mhaikala\\Documents\\Kuliah\\TA\\TAProj\\C .dat")
     # calculate primitive fcc volumes and convert it to angstrom^3
     volumes = 0.25*dat[:,1].^3 / (ANG2BOHR^3)
     # energies in eV
