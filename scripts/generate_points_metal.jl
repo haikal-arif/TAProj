@@ -95,7 +95,7 @@ const DIR_PSP = joinpath(DIR_PWDFT, "pseudopotentials", "pade_gth")
 
 
 function main()
-    lc20 = createLC20()
+    lc20 = createLC20_metal()
     
     
     Threads.@threads for atom_recipes in lc20
