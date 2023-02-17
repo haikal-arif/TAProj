@@ -1,3 +1,4 @@
 .vscode/
 *.txt
 pwscf.save/
+pwscf.xml
