@@ -5,7 +5,7 @@
 /
 
 &SYSTEM
-    celldm(1)   =  10.2481
+    celldm(1)   = 0 
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
@@ -37,4 +37,5 @@ Si     28.0855   Si.SCAN.UPF2
 
 ATOMIC_POSITIONS {alat}
 Si      0.000000   0.000000   0.000000
-Si      0.250000   0.250000   0.250000  
+Si      0.250000   0.250000   0.250000 
+
