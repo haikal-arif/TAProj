@@ -53,5 +53,14 @@ Si      0.250000   0.250000   0.250000
 
 EOF
   pw.x < "$DIRNAME/$FILENAME" > "$DIRNAME/PW.out" &
+  pids[$index]=$!
 done
+
+for index in ${pids[@]}; do
+  wait ${pids[$index]}
+  cat 
+done
+
+
+
 
