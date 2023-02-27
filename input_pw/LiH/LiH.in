@@ -1,16 +1,16 @@
 &CONTROL
-    calculation = "scf"
+    calculation = "vc-relax"
     max_seconds =  8.64000e+04
-    pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
+    pseudo_dir  = "~/Documents/PWDFT.jl/pseudopotentials/scan_upf/"
 /
 
 &SYSTEM
-    celldm(1)   =  10.2481
+    celldm(1)   =  10.2631
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
     nspin       = 1
-    ntyp        = 1
+    ntyp        = 2
 /
 
 &ELECTRONS
@@ -33,8 +33,9 @@ K_POINTS {automatic}
   10 10 10 0 0 0
 
 ATOMIC_SPECIES
-Si     28.0855   Si.SCAN.UPF2
+Li     6.941   Li.SCAN.UPF
+H      1.008    H.SCAN.UPF
 
 ATOMIC_POSITIONS {alat}
-Si      0.000000   0.000000   0.000000
-Si      0.250000   0.250000   0.250000  
+Li      0.000000   0.000000   0.000000 1 1 1
+H       0.500000   0.500000   0.500000 1 1 1
