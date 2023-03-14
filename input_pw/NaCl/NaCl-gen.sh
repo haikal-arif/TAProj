@@ -1,10 +1,10 @@
 #!/bin/bash
- 
-lattice_params=(9.2176 9.5468 9.876 10.2052 10.5344 10.8636 11.1928 11.522 11.8512 12.1804 12.5096 12.8388 13.168 13.4972 13.8264)
+
+lattice_params=(6.858 7.1 7.342 7.584 7.827 8.311 8.553 8.795 9.037 9.359 9.682 10.001 10.651 10.973 11.296 11.619 11.941 12.264 12.910 13.232)
 FILENAME="PW.in"
 
 for index in "${!lattice_params[@]}"; do
-  DIRNAME="./input_pw/Ge/$index/"
+  DIRNAME="./input_pw/NaCl/$index/"
   if [[ ! -d $DIRNAME ]]; then
     mkdir "$DIRNAME"  
   fi
@@ -14,7 +14,6 @@ for index in "${!lattice_params[@]}"; do
     max_seconds =  8.64000e+04
     pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
     outdir      = "$DIRNAME"
-
 /
 
 &SYSTEM
@@ -23,7 +22,7 @@ for index in "${!lattice_params[@]}"; do
     ibrav       = 2
     nat         = 2
     nspin       = 1
-    ntyp        = 1
+    ntyp        = 2
 /
 
 &ELECTRONS
@@ -46,11 +45,12 @@ K_POINTS {automatic}
   10 10 10 0 0 0
 
 ATOMIC_SPECIES
-Ge     72.64  Ge.SCAN.UPF2
+Na     6.941   Li.SCAN.UPF2
+Cl     35.453  Cl.SCAN.UPF2
 
 ATOMIC_POSITIONS {alat}
-Ge      0.000000   0.000000   0.000000
-Ge      0.250000   0.250000   0.250000 
+Na      0.000000   0.000000   0.000000
+Cl      0.500000   0.500000   0.500000 
 
 EOF
   pw.x < "$DIRNAME/$FILENAME" > "$DIRNAME/PW.out" &
