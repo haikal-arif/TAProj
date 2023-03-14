@@ -5,13 +5,12 @@
 /
 
 &SYSTEM
-    celldm(1)   =  10.2631 
-    ecutwfc     =  5.00000e+01 
+    celldm(1)   =  10.2631
+    ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
     nspin       = 1
-    ntyp        = 1
-    input_dft   = 'SCAN'
+    ntyp        = 2
 /
 
 &ELECTRONS
@@ -33,10 +32,10 @@
 K_POINTS {automatic}
   10 10 10 0 0 0
 
-  ATOMIC_SPECIES
-C     12.011   C.SCAN.UPF
+ATOMIC_SPECIES
+Li     6.941   Li.SCAN.UPF
+ F     18.998   F.SCAN.UPF
 
 ATOMIC_POSITIONS {alat}
-C      0.000000   0.000000   0.000000 
-C      0.250000   0.250000   0.250000
-
+Li      0.000000   0.000000   0.000000 1 1 1
+ F      0.500000   0.500000   0.500000 1 1 1

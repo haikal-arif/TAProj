@@ -1,25 +1,24 @@
 &CONTROL
-    calculation = "scf"
+    calculation = "vc-relax"
     max_seconds =  8.64000e+04
     pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
 /
 
 &SYSTEM
-    celldm(1)   =  10.2481
+    celldm(1)   =  10.2631
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
     nspin       = 1
-    ntyp        = 1
-    input_dft   = 'SCAN'
+    ntyp        = 2
 /
 
 &ELECTRONS
-    conv_thr         =  1.00000e-06
-    diagonalization  = "davidson"
+    conv_thr         =  1.00000e-08
+    diagonalization  = "ppcg"
     electron_maxstep = 300
-    mixing_beta      =  1.0000e-02
-    mixing_mode      = "local-TF"
+    mixing_beta      =  1.0000e-03
+    mixing_mode      = "TF"
     startingpot      = "atomic"
     startingwfc      = "atomic+random"
 /
@@ -35,7 +34,8 @@ K_POINTS {automatic}
 
 ATOMIC_SPECIES
 Si     28.0855   Si.SCAN.UPF2
+C      12.011    C.SCAN.UPF2
 
 ATOMIC_POSITIONS {alat}
-Si      0.000000   0.000000   0.000000
-Si      0.250000   0.250000   0.250000  
+Si      0.000000   0.000000   0.000000 1 1 1
+C       0.250000   0.250000   0.250000 1 1 1

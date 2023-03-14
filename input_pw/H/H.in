@@ -1,17 +1,16 @@
 &CONTROL
-    calculation = "vc-relax"
+    calculation = "relax"
     max_seconds =  8.64000e+04
-    pseudo_dir  = "~/Documents/PWDFT.jl/pseudopotentials/scan_upf/"
+    pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
 /
 
 &SYSTEM
-    celldm(1)   =  10.2631 
-    ecutwfc     =  5.00000e+01 
-    ibrav       = 2
+    celldm(1)   =  16.000
+    ecutwfc     =  5.0000e+01
+    ibrav       = 1
     nat         = 2
     nspin       = 1
     ntyp        = 1
-    input_dft   = 'SCAN'
 /
 
 &ELECTRONS
@@ -33,10 +32,9 @@
 K_POINTS {automatic}
   10 10 10 0 0 0
 
-  ATOMIC_SPECIES
-C     12.011   C.SCAN.UPF
+ATOMIC_SPECIES
+H     1.008     H.SCAN.UPF2
 
 ATOMIC_POSITIONS {alat}
-C      0.000000   0.000000   0.000000 
-C      0.250000   0.250000   0.250000
-
+H      0.500000   0.500000   0.500000
+H      0.500000   0.500000   0.550000
