@@ -11,6 +11,7 @@
     nat         = 2
     nspin       = 1
     ntyp        = 1
+    input_dft   = 'SCAN'
 /
 
 &ELECTRONS
