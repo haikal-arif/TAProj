@@ -6,7 +6,7 @@
 /
 
 &SYSTEM
-    a           = 3.356 
+    a           = 6.322 
     ecutwfc     =  6.00000e+01
     ibrav       = 2
     nat         = 1
