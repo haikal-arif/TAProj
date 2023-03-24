@@ -13,6 +13,7 @@
     ntyp        = 1
     occupations = 'smearing'
     degauss     = 0.1
+    starting_magnetization = 0.5
 /
 
 &ELECTRONS
