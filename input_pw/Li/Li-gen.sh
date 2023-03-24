@@ -19,8 +19,8 @@ for index in "${!lattice_params[@]}"; do
 &SYSTEM
     celldm(1)   = ${lattice_params[$index]} 
     ecutwfc     =  5.00000e+01
-    ibrav       = 2
-    nat         = 2
+    ibrav       = 3
+    nat         = 1
     nspin       = 1
     ntyp        = 1
 /
@@ -45,11 +45,10 @@ K_POINTS {automatic}
   10 10 10 0 0 0
 
 ATOMIC_SPECIES
-Li        Si.SCAN.UPF2
+Li        Li.SCAN.UPF2
 
 ATOMIC_POSITIONS {alat}
 Li      0.000000   0.000000   0.000000
-Li      0.250000   0.250000   0.250000 
 
 EOF
   pw.x < "$DIRNAME/$FILENAME" > "$DIRNAME/PW.out" &
