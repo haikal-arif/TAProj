@@ -2,11 +2,11 @@
     calculation = "scf"
     max_seconds =  8.64000e+04
     pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
-    outdir      = "./input_pw/C/5/"
+    outdir      = "./input_pw/C/15/"
 /
 
 &SYSTEM
-    a           = 3.5294 
+    a           = 4.5378 
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
