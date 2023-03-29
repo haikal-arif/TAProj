@@ -3,10 +3,11 @@
     max_seconds =  8.64000e+04
     pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
     outdir      = "./input_pw/Ge/5/"
+
 /
 
 &SYSTEM
-    celldm(1)   = 10.8636 
+    a           = 5.6898800000000005 
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
