@@ -1,6 +1,6 @@
 #!/bin/bash
 
-lattice_params=(6.858 7.1 7.342 7.584 7.827 8.311 8.553 8.795 9.037 9.359 9.682 10.001 10.651 10.973 11.296 11.619 11.941 12.264 12.910 13.232)
+lattice_params=(3.6 3.72 3.84 3.96 4.08 4.2 4.32 4.44 4.56 4.68 4.8 4.92 5.04 5.16 5.28 5.4)
 FILENAME="PW.in"
 
 for index in "${!lattice_params[@]}"; do
@@ -17,7 +17,7 @@ for index in "${!lattice_params[@]}"; do
 /
 
 &SYSTEM
-    celldm(1)   = ${lattice_params[$index]} 
+    a           = ${lattice_params[$index]} 
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
