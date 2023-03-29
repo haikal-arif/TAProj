@@ -6,7 +6,7 @@
 /
 
 &SYSTEM
-    celldm(1)   = 9.5649 
+    a           = 5.1044 
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
