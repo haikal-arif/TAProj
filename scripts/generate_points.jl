@@ -108,7 +108,7 @@ ALL_SCAN_PSP = Dict(
     "S" => "S.SCAN.UPF2",
     "Si" => "Si.SCAN.UPF2",)
 
-const DIR_PWDFT = joinpath("C:/Users/mhaikala/Documents/Kuliah/PWDFT.jl/")
+const DIR_PWDFT = dirname(dirname(pathof(PWDFT)))
 const DIR_PSP = joinpath(DIR_PWDFT, "pseudopotentials", "pade_gth")
 const DIR_PSP_SCAN = joinpath(DIR_PWDFT, "pseudopotentials", "scan_upf")
 
@@ -131,15 +131,11 @@ function main()
         num_points = 16
         latvecs_vals = range(low_bound, upper_bound, num_points)
         ecutwfc = 50.0
+        print(molecule)
+        molecule = strip(molecule)
 
-
-
-        open("result/$molecule.dat", "a") do file
-            line = "================$molecule================\n"
-            print(line)
-            write(file, line)
-            flush(file)
-            Threads.@threads for latvecs_point in latvecs_vals
+        for (idx, latvecs_point) in collect(enumerate(latvecs_vals))
+            open("result/$molecule.dat", "a") do file
                 atom_recipes.lattice_param = latvecs_point
                 crystal_structure = build(atom_recipes)
                 pspfiles = map(key -> joinpath(DIR_PSP_SCAN, ALL_SCAN_PSP[strip(key)]), atom_recipes.atom_names)
@@ -147,13 +143,14 @@ function main()
                 ham = Hamiltonian(crystal_structure, pspfiles, ecutwfc, meshk=[10, 10, 10])
                 KS_solve_Emin_PCG!(ham, verbose=false,)
                 total_energy = sum(ham.energies)
-                line = "$latvecs_point\t\t$total_energy\n"
+                line = "$latvecs_point\t$total_energy\n"
                 print(line)
                 write(file, line)
                 flush(file)
             end
+
             println("Finished job")
-        end # open file
+        end 
     end
 end
 
