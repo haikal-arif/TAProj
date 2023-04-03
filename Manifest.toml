@@ -2,19 +2,19 @@
 
 julia_version = "1.8.5"
 manifest_format = "2.0"
-project_hash = "7e43587c9645a3d0c1845244aaeeae5d77cf4aff"
+project_hash = "d023a42e2c97970cd3cb89b20907edfb2320a7ec"
 
 [[deps.AbstractFFTs]]
 deps = ["ChainRulesCore", "LinearAlgebra"]
-git-tree-sha1 = "69f7020bd72f069c219b5e8c236c1fa90d2cb409"
+git-tree-sha1 = "16b6dbc4cf7caee4e1e75c49485ec67b667098a0"
 uuid = "621f4979-c628-5d54-868e-fcf4e3e8185c"
-version = "1.2.1"
+version = "1.3.1"
 
 [[deps.Adapt]]
-deps = ["LinearAlgebra"]
-git-tree-sha1 = "0310e08cb19f5da31d08341c6120c047598f5b9c"
+deps = ["LinearAlgebra", "Requires"]
+git-tree-sha1 = "cc37d689f599e8df4f464b2fa3870ff7db7492ef"
 uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
-version = "3.5.0"
+version = "3.6.1"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -44,10 +44,10 @@ uuid = "4ee394cb-3365-5eb0-8335-949819d2adfc"
 version = "0.2.0+0"
 
 [[deps.CUDA_Runtime_jll]]
-deps = ["Artifacts", "CUDA_Driver_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "Pkg", "TOML"]
-git-tree-sha1 = "d3e6ccd30f84936c1a3a53d622d85d7d3f9b9486"
+deps = ["Artifacts", "CUDA_Driver_jll", "JLLWrappers", "LazyArtifacts", "Libdl", "TOML"]
+git-tree-sha1 = "d555cffbab63bb33401ab2cc6445d17dd38c305c"
 uuid = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"
-version = "0.2.3+2"
+version = "0.2.4+0"
 
 [[deps.Calculus]]
 deps = ["LinearAlgebra"]
@@ -122,6 +122,10 @@ version = "0.18.13"
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
+[[deps.DelimitedFiles]]
+deps = ["Mmap"]
+uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+
 [[deps.DensityInterface]]
 deps = ["InverseFunctions", "Test"]
 git-tree-sha1 = "80c3e8639e3353e5d2912fb3a1916b8455e2494b"
@@ -169,9 +173,9 @@ version = "0.6.8"
 
 [[deps.FFTW]]
 deps = ["AbstractFFTs", "FFTW_jll", "LinearAlgebra", "MKL_jll", "Preferences", "Reexport"]
-git-tree-sha1 = "90630efff0894f8142308e334473eba54c433549"
+git-tree-sha1 = "f9818144ce7c8c41edf5c4c179c684d92aa4d9fe"
 uuid = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
-version = "1.5.0"
+version = "1.6.0"
 
 [[deps.FFTW_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -421,9 +425,9 @@ version = "1.3.3"
 
 [[deps.OpenSSL_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "f6e9dba33f9f2c44e08a020b0caf6903be540004"
+git-tree-sha1 = "9ff31d101d987eb9d66bd8b176ac7c277beccd09"
 uuid = "458c3c95-2e84-50aa-8efc-19380b2a3a95"
-version = "1.1.19+0"
+version = "1.1.20+0"
 
 [[deps.OpenSpecFun_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Pkg"]
@@ -456,9 +460,9 @@ version = "0.11.16"
 
 [[deps.PWDFT]]
 deps = ["Coverage", "FFTW", "Libdl", "Libxc", "LightXML", "LinearAlgebra", "OffsetArrays", "Printf", "Random", "SpecialFunctions", "Test"]
-git-tree-sha1 = "7f3a7db12816be84972a978bc9af26ddb22b1c6c"
-repo-rev = "master"
-repo-url = "https://github.com/f-fathurrahman/PWDFT.jl"
+git-tree-sha1 = "34ebb828a7f17d51176509c938eca99a39cd0879"
+repo-rev = "dev-scan-v2"
+repo-url = "https://github.com/haikal-arif/PWDFT.jl"
 uuid = "f0909338-8605-11e9-2ba7-5dc928b678ea"
 version = "0.2.0"
 
@@ -470,9 +474,9 @@ version = "0.12.3"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "151d91d63d8d6c1a5789ecb7de51547e00480f1b"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.4"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -633,9 +637,9 @@ uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
 version = "0.9.11"
 
 [[deps.URIs]]
-git-tree-sha1 = "ac00576f90d8a259f2c9d823e91d1de3fd44d348"
+git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
 uuid = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
-version = "1.4.1"
+version = "1.4.2"
 
 [[deps.UUIDs]]
 deps = ["Random", "SHA"]
