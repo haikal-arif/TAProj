@@ -29,6 +29,7 @@
 /
 
 &CELL
+    cell_dofree = 'volume'
 /
 
 K_POINTS {automatic}
