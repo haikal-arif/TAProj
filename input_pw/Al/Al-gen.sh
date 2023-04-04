@@ -1,6 +1,6 @@
 #!/bin/bash
 
-lattice_params=(4.8 4.96 5.12 5.28 5.44 5.6 5.76 5.92 6.08 6.24 6.4 6.56 6.72 6.88 7.04)
+lattice_params=(3.36 3.472 3.584 3.696 3.808 3.92 4.032 4.144 4.256 4.368 4.48 4.592 4.704 4.816 4.928 5.04)
 FILENAME="PW.in"
 
 for index in "${!lattice_params[@]}"; do
@@ -21,10 +21,11 @@ for index in "${!lattice_params[@]}"; do
     ecutwfc     =  6.00000e+01
     ibrav       = 2
     nat         = 1
-    nspin       = 1
+    nspin       = 2
     ntyp        = 1
     occupations = 'smearing'
     degauss     = 0.1
+starting_magnetization = 2.0
 /
 
 &ELECTRONS
