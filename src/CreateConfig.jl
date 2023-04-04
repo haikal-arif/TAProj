@@ -19,7 +19,7 @@ function createLC20()::Vector{SimpleCrystalConfig}
         SimpleCrystalConfig(["Ge"], diamond, 6.0963),
         SimpleCrystalConfig(["Sn"], diamond, 6.656),
         SimpleCrystalConfig(["Li", "H "], rocksalt, 4.090),
-        SimpleCrystalConfig(["Li", "F "], rocksalt, 4.102),
+        SimpleCrystalConfig(["Li", "F "], rocksalt, 7.75),
         SimpleCrystalConfig(["Li", "Cl"], rocksalt, 10.045),
         SimpleCrystalConfig(["Na", "F "], rocksalt, 4.733),
         SimpleCrystalConfig(["Na", "Cl"], rocksalt, 5.724),
@@ -41,18 +41,8 @@ function createLC20_metal()::Vector{SimpleCrystalConfig}
         SimpleCrystalConfig(["Pd"], fcc, 3.948),
         SimpleCrystalConfig(["Cu"], fcc, 3.643),
         SimpleCrystalConfig(["Ag"], fcc, 4.154),
-        # SimpleCrystalConfig(["C"], diamond, 3.573),
-        # SimpleCrystalConfig(["Si"], diamond, 5.469),
         SimpleCrystalConfig(["Ge"], diamond, 5.761),
         SimpleCrystalConfig(["Sn"], diamond, 6.656),
-        # SimpleCrystalConfig(["Li", "H "], rocksalt, 4.090),
-        # SimpleCrystalConfig(["Li", "F "], rocksalt, 4.102),
-        # SimpleCrystalConfig(["Li", "Cl"], rocksalt, 5.184),
-        # SimpleCrystalConfig(["Na", "F "], rocksalt, 4.733),
-        # SimpleCrystalConfig(["Na", "Cl"], rocksalt, 5.724),
-        # SimpleCrystalConfig(["Mg", "O"], rocksalt, 4.207),
-        # SimpleCrystalConfig(["Si", "C"], zinc_blende, 5.648),
-        # SimpleCrystalConfig(["Ga", "As"], zinc_blende, 5.648),
     ]
 
     data

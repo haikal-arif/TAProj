@@ -46,7 +46,7 @@ K_POINTS {automatic}
   10 10 10 0 0 0
 
 ATOMIC_SPECIES
-Li     6.941   Li.SCAN.UPF2
+Li      6.941   Li.SCAN.UPF2
 Cl      35.453  Cl.SCAN.UPF2
 
 ATOMIC_POSITIONS {alat}
