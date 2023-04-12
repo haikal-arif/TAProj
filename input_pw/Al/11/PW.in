@@ -6,14 +6,15 @@
 /
 
 &SYSTEM
-    a           = 6.56 
+    a           = 4.592 
     ecutwfc     =  6.00000e+01
     ibrav       = 2
     nat         = 1
-    nspin       = 1
+    nspin       = 2
     ntyp        = 1
     occupations = 'smearing'
     degauss     = 0.1
+starting_magnetization = 2.0
 /
 
 &ELECTRONS
