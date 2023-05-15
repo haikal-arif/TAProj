@@ -136,21 +136,22 @@ function main()
 
         for (idx, latvecs_point) in collect(enumerate(latvecs_vals))
             open("result/$molecule.dat", "a") do file
+                redirect_stdout(file)
                 atom_recipes.lattice_param = latvecs_point
                 crystal_structure = build(atom_recipes)
                 pspfiles = map(key -> joinpath(DIR_PSP_SCAN, ALL_SCAN_PSP[strip(key)]), atom_recipes.atom_names)
-                println(pspfiles)
-                ham = Hamiltonian(crystal_structure, pspfiles, ecutwfc, meshk=[10, 10, 10])
-                KS_solve_Emin_PCG!(ham, verbose=false,)
+                ham = Hamiltonian(crystal_structure, pspfiles, ecutwfc, meshk=[10, 10, 10], xcfunc="SCAN")
+                println(ham)
+                KS_solve_SCF!(ham)
                 total_energy = sum(ham.energies)
-                line = "$latvecs_point\t$total_energy\n"
+                line = "!\t$latvecs_point\t$total_energy\n"
                 print(line)
-                write(file, line)
-                flush(file)
+                # write(file, line)
+                # flush(file)
             end
 
             println("Finished job")
-        end 
+        end
     end
 end
 
