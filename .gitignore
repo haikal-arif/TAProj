@@ -3,5 +3,6 @@
 pwscf.save/
 pwscf.xml
 pwscf.*
+nohup.out
 input_pw/Si/[0-9]/
 input_pw/Si/[0-9][0-9]/

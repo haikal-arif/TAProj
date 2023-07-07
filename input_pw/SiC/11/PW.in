@@ -1,0 +1,43 @@
+&CONTROL
+    calculation = "scf"
+    max_seconds =  8.64000e+04
+    pseudo_dir  = "~/Documents/TA/PWDFT.jl/pseudopotentials/scan_upf/"
+    outdir      = "./input_pw/SiC/11/"
+/
+
+&SYSTEM
+    a           = 4.92 
+    ecutwfc     =  5.00000e+01
+    ibrav       = 2
+    nat         = 2
+    nspin       = 1
+    ntyp        = 2
+/
+
+&ELECTRONS
+    conv_thr         =  2.00000e-05
+    diagonalization  = "davidson"
+    electron_maxstep = 300
+    mixing_beta      =  2.0000e-01
+    mixing_mode      = "local-TF"
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+&IONS
+/
+
+&CELL
+/
+
+K_POINTS {automatic}
+  10 10 10 0 0 0
+
+ATOMIC_SPECIES
+Si     28.0855   Si.SCAN.UPF2
+C      12.011    C.SCAN.UPF2
+
+ATOMIC_POSITIONS {alat}
+Si      0.000000   0.000000   0.000000
+C       0.250000   0.250000   0.250000 
+

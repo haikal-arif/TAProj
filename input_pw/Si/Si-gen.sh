@@ -1,6 +1,6 @@
 #!/bin/bash
 
-lattice_params=(8.1985 8.4718 8.7450 9.0183 9.2916 9.5649 9.8382 10.1114 10.3847 10.6580 10.9313 11.2046 11.4779 11.7511 12.0244 12.2977)
+lattice_params=(4.3752 4.52104 4.66688 4.81272 4.95856 5.1044 5.25024 5.39608 5.54192 5.68776 5.8336 5.97944 6.12528 6.27112 6.41696 6.5628)
 FILENAME="PW.in"
 
 for index in "${!lattice_params[@]}"; do
@@ -17,7 +17,7 @@ for index in "${!lattice_params[@]}"; do
 /
 
 &SYSTEM
-    celldm(1)   = ${lattice_params[$index]} 
+    a           = ${lattice_params[$index]} 
     ecutwfc     =  5.00000e+01
     ibrav       = 2
     nat         = 2
@@ -26,10 +26,10 @@ for index in "${!lattice_params[@]}"; do
 /
 
 &ELECTRONS
-    conv_thr         =  1.00000e-06
+    conv_thr         =  2.00000e-05
     diagonalization  = "davidson"
     electron_maxstep = 300
-    mixing_beta      =  1.0000e-02
+    mixing_beta      =  2.0000e-01
     mixing_mode      = "local-TF"
     startingpot      = "atomic"
     startingwfc      = "atomic+random"
