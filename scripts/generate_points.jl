@@ -135,14 +135,14 @@ function main()
         molecule = strip(molecule)
 
         for (idx, latvecs_point) in collect(enumerate(latvecs_vals))
-            open("result/$molecule.dat", "a") do file
+            open("../raw-data/result-pwdft-internal/$molecule.dat", "a") do file
                 redirect_stdout(file)
-                atom_recipes.lattice_param = latvecs_point
+                atom_recipes.lattice_param = latvecs_point * ANG2BOHR
                 crystal_structure = build(atom_recipes)
                 pspfiles = map(key -> joinpath(DIR_PSP_SCAN, ALL_SCAN_PSP[strip(key)]), atom_recipes.atom_names)
-                ham = Hamiltonian(crystal_structure, pspfiles, ecutwfc, meshk=[10, 10, 10], xcfunc="SCAN")
+                ham = Hamiltonian(crystal_structure, pspfiles, ecutwfc, meshk=[10, 10, 10], xcfunc="SCAN", use_xc_internal=true)
                 println(ham)
-                KS_solve_SCF!(ham)
+                KS_solve_SCF!(ham, betamix=0.2, NiterMax=100, etot_conv_thr=1e-5, update_psi="davidson")
                 total_energy = sum(ham.energies)
                 line = "!\t$latvecs_point\t$total_energy\n"
                 print(line)
